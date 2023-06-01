@@ -65,11 +65,12 @@
         // No need to change anything ABOVE this line ^
 
         return (
+          <>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}>
             Click to Draw a Card
           </button>
-          <button onclick={shuffle}>
+          <button onClick={shuffle}>
             Return Cards and Shuffle Deck
           </button>
           <div style={handStyles}>
@@ -81,6 +82,7 @@
               )
             })}
           </div>
+          </>
         )
       }
 
@@ -92,3 +94,5 @@
     </script>
   </body>
 </html>
+
+The three erros were, no react fragments. A react component can only return one HTML element at a time, so they must be wrapped in a parent. The drawCard method was not referenced in the onClick listener. The final error was that the shuffle button's listener was mispelled.
